@@ -1,0 +1,332 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSI Model Interactive Learning</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #e1f5fe);
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #0d47a1;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #1565c0;
+      margin-top: 30px;
+    }
+
+    p.intro {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .section-box {
+      background: #ffffff;
+      border-left: 6px solid #1565c0;
+      border-radius: 8px;
+      padding: 15px 25px;
+      width: 80%;
+      margin: 0 auto 30px auto;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: left;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 90%;
+      margin: 15px auto;
+      background: #ffffff;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #1565c0;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1565c0;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #e3f2fd;
+    }
+
+    .layer {
+      background: #ffffff;
+      border: 2px solid #0d47a1;
+      border-radius: 10px;
+      margin: 12px auto;
+      width: 70%;
+      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .layer:hover {
+      background: #bbdefb;
+      transform: scale(1.03);
+    }
+
+    .layer-name {
+      font-weight: bold;
+      font-size: 1.3em;
+      color: #0d47a1;
+    }
+
+    .description {
+      display: none;
+      color: #333;
+      margin-top: 10px;
+      text-align: left;
+      padding: 0 20px;
+    }
+
+    .description ul {
+      text-align: left;
+      margin-top: 5px;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #555;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>OSI Model Interactive Learning</h1>
+  <p class="intro">Click on any OSI layer below to explore its functions, protocols, and examples.</p>
+
+  <!-- Understanding the OSI Model Section -->
+  <h2>Understanding the OSI Model</h2>
+  <div class="section-box">
+    <p>
+      The <strong>Open Systems Interconnection (OSI) Model</strong> is a conceptual framework developed by the 
+      <strong>International Organization for Standardization (ISO)</strong> to standardize how different computer 
+      systems communicate over a network. It consists of seven layers, each with specific roles and responsibilities, 
+      ensuring seamless data transmission between devices.
+    </p>
+  </div>
+
+  <!-- Importance of the OSI Model Section -->
+  <h2>Importance of the OSI Model</h2>
+  <div class="section-box">
+    <p>
+      The <strong>OSI Model</strong> is crucial for understanding and troubleshooting network issues. By dividing 
+      communication into layers, it allows engineers to isolate and address problems at specific layers without 
+      affecting the entire system. While modern networks often use the simpler <strong>TCP/IP model</strong>, 
+      the OSI Model remains a valuable tool for learning and diagnosing network behavior.
+    </p>
+  </div>
+
+  <!-- Seven Layers of the OSI Model Section -->
+  <h2>Seven Layers of the OSI Model</h2>
+  <div class="section-box">
+    <p>
+      The OSI model has seven different layers, which are divided into two groups. The following table lists all the 
+      layers with their names and numbers.
+    </p>
+    <table>
+      <tr>
+        <th>Group</th>
+        <th>Layer Number</th>
+        <th>Layer Name</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Top Layers</td>
+        <td>7</td>
+        <td>Application</td>
+        <td>Provide a user interface for sending and receiving data</td>
+      </tr>
+      <tr>
+        <td>Top Layers</td>
+        <td>6</td>
+        <td>Presentation</td>
+        <td>Encrypt, format, and compress data for transmission</td>
+      </tr>
+      <tr>
+        <td>Top Layers</td>
+        <td>5</td>
+        <td>Session</td>
+        <td>Initiate and terminate a session with the remote system</td>
+      </tr>
+      <tr>
+        <td>Bottom Layers</td>
+        <td>4</td>
+        <td>Transport</td>
+        <td>Break the data stream into smaller segments and provide reliable and unreliable data delivery</td>
+      </tr>
+      <tr>
+        <td>Bottom Layers</td>
+        <td>3</td>
+        <td>Network</td>
+        <td>Provide logical addressing</td>
+      </tr>
+      <tr>
+        <td>Bottom Layers</td>
+        <td>2</td>
+        <td>Data Link</td>
+        <td>Prepare data for transmission</td>
+      </tr>
+      <tr>
+        <td>Bottom Layers</td>
+        <td>1</td>
+        <td>Physical</td>
+        <td>Move data between devices</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Interactive OSI Layers -->
+  <div class="layer" onclick="toggleDescription(this)">
+    <div class="layer-name">Layer 7 – Application</div>
+    <div class="description">
+      <p>The Application Layer provides services directly to the user or application programs. It enables user interaction with the network.</p>
+      <ul>
+        <li><b>Functions:</b> User interface, network resource access, data generation.</li>
+        <li><b>Protocols:</b> HTTP, HTTPS, FTP, SMTP, POP3, DNS, SNMP.</li>
+        <li><b>Example:</b> You open a web browser and type a URL — the Application Layer initiates the HTTP request.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="layer" onclick="toggleDescription(this)">
+    <div class="layer-name">Layer 6 – Presentation</div>
+    <div class="description">
+      <p>This layer translates, encrypts, or compresses data for the Application Layer. It acts as the “translator” between network formats and application formats.</p>
+      <ul>
+        <li><b>Functions:</b> Data translation, compression, encryption/decryption.</li>
+        <li><b>Protocols:</b> SSL/TLS, MIME, JPEG, GIF, ASCII, EBCDIC.</li>
+        <li><b>Example:</b> When you visit an HTTPS site, TLS encrypts your web traffic here.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="layer" onclick="toggleDescription(this)">
+    <div class="layer-name">Layer 5 – Session</div>
+    <div class="description">
+      <p>The Session Layer manages and controls the connections between computers — creating, maintaining, and terminating sessions.</p>
+      <ul>
+        <li><b>Functions:</b> Session establishment, synchronization, and termination.</li>
+        <li><b>Protocols:</b> NetBIOS, RPC, PPTP, SIP.</li>
+        <li><b>Example:</b> During a video conference, this layer ensures a continuous session is maintained between participants.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="layer" onclick="toggleDescription(this)">
+    <div class="layer-name">Layer 4 – Transport</div>
+    <div class="description">
+      <p>The Transport Layer ensures reliable data transfer between devices, managing error checking, data segmentation, and flow control.</p>
+      <ul>
+        <li><b>Functions:</b> Reliable delivery, flow control, error correction, segmentation.</li>
+        <li><b>Protocols:</b> TCP, UDP, SCTP.</li>
+        <li><b>Example:</b> TCP breaks your data into segments and reassembles them at the destination.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="layer" onclick="toggleDescription(this)">
+    <div class="layer-name">Layer 3 – Network</div>
+    <div class="description">
+      <p>The Network Layer determines the best physical path for data to reach its destination using logical addressing and routing.</p>
+      <ul>
+        <li><b>Functions:</b> Routing, logical addressing, packet forwarding, error handling.</li>
+        <li><b>Protocols:</b> IP, ICMP, IPsec, IGMP, RIP, OSPF.</li>
+        <li><b>Example:</b> Routers use IP addresses to send data packets across the internet.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="layer" onclick="toggleDescription(this)">
+    <div class="layer-name">Layer 2 – Data Link</div>
+    <div class="description">
+      <p>The Data Link Layer ensures reliable transmission across a single link or local network. It defines how data is formatted for transmission and how access to the physical medium is controlled.</p>
+      <ul>
+        <li><b>Functions:</b> Framing, physical addressing, error detection (via CRC), flow control.</li>
+        <li><b>Protocols:</b> Ethernet, PPP, HDLC, Frame Relay, ARP.</li>
+        <li><b>Example:</b> Your computer’s network card uses this layer to send frames over Ethernet.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="layer" onclick="toggleDescription(this)">
+    <div class="layer-name">Layer 1 – Physical</div>
+    <div class="description">
+      <p>The Physical Layer transmits raw bits over a physical medium. It defines the electrical, mechanical, and procedural interfaces for data transmission.</p>
+      <ul>
+        <li><b>Functions:</b> Bit transmission, voltage levels, cable types, data rates.</li>
+        <li><b>Technologies:</b> Ethernet cables, fiber optics, radio signals, hubs, repeaters.</li>
+        <li><b>Example:</b> The actual electrical signals travel through cables or wireless signals at this layer.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- OSI Model Diagram -->
+  <div class="section-box">
+    <h2>OSI Model Diagram</h2>
+    <p>Visual overview of the seven layers of the OSI model:</p>
+    <img src="https://i.pinimg.com/736x/ae/da/88/aeda887a39bad1987aae042bb5249c01.jpg" 
+         alt="OSI Model Diagram" 
+         style="max-width:100%; height:auto; border:2px solid #0d47a1; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
+  </div>
+<h2>Interface Layers in Networking (OSI Model)</h2>
+  <div class="section-box">
+    <p>
+      Interface layers in networking refer to the seven layers of the OSI (Open Systems Interconnection) model, 
+      which standardizes communication functions across diverse systems. Each layer has distinct responsibilities, 
+      ensuring seamless data transmission between devices. Below is an overview of these layers:
+    </p>
+
+    <ul>
+      <li><strong>1. Physical Layer:</strong> Responsible for the physical connection between devices. It transmits raw bits over cables or wireless signals, defining hardware specifications such as cables, connectors, and signal types. Devices like hubs and repeaters operate at this layer.</li>
+      <li><strong>2. Data Link Layer:</strong> Ensures error-free data transfer between nodes. It organizes data into frames and manages physical addressing using MAC addresses. Switches and bridges operate here.</li>
+      <li><strong>3. Network Layer:</strong> Handles routing and logical addressing (e.g., IP addresses). It determines the best path for data to travel across networks. Routers function at this layer.</li>
+      <li><strong>4. Transport Layer:</strong> Provides end-to-end communication and ensures reliable data delivery. It segments data into smaller units and reassembles them at the destination. Protocols like TCP and UDP operate here.</li>
+      <li><strong>5. Session Layer:</strong> Manages sessions between devices, establishing, maintaining, and terminating communication sessions. Provides synchronization and checkpointing for reliability.</li>
+      <li><strong>6. Presentation Layer:</strong> Acts as a translator, converting data formats for the Application Layer. Handles encryption, decryption, and compression to ensure compatibility between systems.</li>
+      <li><strong>7. Application Layer:</strong> Provides network services directly to end-users. It includes protocols like HTTP, FTP, and SMTP that enable applications such as browsers and email clients.</li>
+</ul>
+
+    <h3>Importance of Interface Layers</h3>
+    <p>
+      The OSI model simplifies troubleshooting by isolating issues to specific layers. It promotes interoperability 
+      between hardware and software from different vendors, making it a cornerstone of modern networking.
+    </p>
+</div>
+<div class="section-box">
+    <h2>Services of the Application & Presentation Layers</h2>
+    <p>Diagram illustrating the services provided by the Application and Presentation Layers:</p>
+    <img src="https://www.sanfoundry.com/wp-content/uploads/2024/05/services-of-the-application-layer-and-presentation-layer.png"
+         alt="Services of the Application and Presentation Layers"
+         style="max-width:100%; height:auto; border:2px solid #0d47a1; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);">
+  </div>
+
+  <footer>
+<h4>THANK YOU</h4>
+      </footer>
+
+  <script>
+    function toggleDescription(element) {
+      const desc = element.querySelector('.description');
+      desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
